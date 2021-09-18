@@ -1,4 +1,7 @@
 # wikidata2gpx
+
+[![build](https://github.com/a1fred/wikidata2gpx/actions/workflows/main.yml/badge.svg)](https://github.com/a1fred/wikidata2gpx/actions/workflows/main.yml)
+
 Generate gpx file from wikidata's structured data dumps.
 
 * https://www.topografix.com/GPX/1/1/
