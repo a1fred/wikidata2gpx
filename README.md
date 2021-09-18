@@ -11,9 +11,11 @@ Generate gpx file from wikidata's structured data dumps.
 Install [pbzip2](http://compression.ca/pbzip2/) recomended for `.bz2` dumps.
 
 ## Examples
- * [en_US.gpx](gpxfiles/en_US.gpx)
- * [en_GB.gpx](gpxfiles/en_GB.gpx)
- * [ru_RU.gpx](gpxfiles/ru_RU.gpx)
+| GPX file                        |  Pois language |  Pois country |
+|---------------------------------|----------------|---------------|
+| [en_US.gpx](gpxfiles/en_US.gpx) | en             | US            |
+| [en_GB.gpx](gpxfiles/en_GB.gpx) | en             | GB            |
+| [ru_RU.gpx](gpxfiles/ru_RU.gpx) | ru             | RU            |
 
 # Build
 ```sh
