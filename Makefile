@@ -36,8 +36,16 @@ gpxallfiles: latest-all.json.bz2 $(TARGET)
 	$(TARGET) wikidata ./latest-all.json.bz2 --gpx-metadata-name="Wiki все" --lang=ru -o gpxallfiles/ru_ALL.gpx
 	$(TARGET) wikidata ./latest-all.json.bz2 --gpx-metadata-name="Wiki all" --lang=en -o gpxallfiles/en_ALL.gpx
 
+
+.PHONY: gpxfiles
 gpxfiles:
 	mkdir -p gpxfiles
-	$(TARGET) filter gpxallfiles/ru_ALL.gpx --gpx-metadata-name="Wiki Россия"     --country-code=RU -o gpxfiles/ru_RU.gpx
+	$(TARGET) filter gpxallfiles/ru_ALL.gpx --gpx-metadata-name="Wiki Россия"        --country-code=RU -o gpxfiles/ru_RU.gpx
+	$(TARGET) filter gpxallfiles/ru_ALL.gpx --gpx-metadata-name="Wiki Украина"       --country-code=UA -o gpxfiles/ru_UA.gpx
+	$(TARGET) filter gpxallfiles/ru_ALL.gpx --gpx-metadata-name="Wiki Белоруссия"    --country-code=BY -o gpxfiles/ru_BY.gpx
+	$(TARGET) filter gpxallfiles/ru_ALL.gpx --gpx-metadata-name="Wiki Казахстан"     --country-code=KZ -o gpxfiles/ru_KZ.gpx
+	$(TARGET) filter gpxallfiles/ru_ALL.gpx --gpx-metadata-name="Wiki Финляндия"     --country-code=FL -o gpxfiles/ru_FL.gpx
+	$(TARGET) filter gpxallfiles/ru_ALL.gpx --gpx-metadata-name="Wiki Норвегия"      --country-code=NO -o gpxfiles/ru_NO.gpx
+
 	$(TARGET) filter gpxallfiles/en_ALL.gpx --gpx-metadata-name="Wiki USA"   --country-code=US -o gpxfiles/en_US.gpx
 	$(TARGET) filter gpxallfiles/en_ALL.gpx --gpx-metadata-name="Wiki GB"    --country-code=GB -o gpxfiles/en_GB.gpx

@@ -17,6 +17,8 @@ Install [pbzip2](http://compression.ca/pbzip2/) recomended for `.bz2` dumps.
 | [en_GB.gpx](gpxfiles/en_GB.gpx) | en             | GB            |
 | [ru_RU.gpx](gpxfiles/ru_RU.gpx) | ru             | RU            |
 
+See all files in [gpxfiles](gpxfiles) folder, or generate your-own.
+
 # Build
 ```sh
 $ make
