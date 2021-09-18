@@ -39,10 +39,11 @@ func (n *ReverseGeocoder) Reverse(lat, lon float64) *CacheItem {
 	cacheItem := CacheItem{}
 
 	var cached []byte
-	n.db.View(func(tx *bolt.Tx) error {
+	err := n.db.View(func(tx *bolt.Tx) error {
 		cached = tx.Bucket(n.bucketName).Get(cacheKey)
 		return nil
 	})
+	utils.ErrCheck(err)
 
 	if cached != nil {
 		err := json.Unmarshal(cached, &cacheItem)

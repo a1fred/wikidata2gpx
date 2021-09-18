@@ -8,6 +8,7 @@ import (
 
 	"github.com/a1fred/wikidata2gpx.git/wikidata2gpx/cmd/filterCmd"
 	"github.com/a1fred/wikidata2gpx.git/wikidata2gpx/cmd/wikidataCmd"
+	"github.com/a1fred/wikidata2gpx.git/wikidata2gpx/utils"
 )
 
 var rootCmd = &cobra.Command{
@@ -15,7 +16,8 @@ var rootCmd = &cobra.Command{
 	Short: "Wikidata pois exporter",
 	Long:  `Wikidata pois exporter`,
 	Run: func(cmd *cobra.Command, args []string) {
-		cmd.Help()
+		err := cmd.Help()
+		utils.ErrCheck(err)
 	},
 }
 

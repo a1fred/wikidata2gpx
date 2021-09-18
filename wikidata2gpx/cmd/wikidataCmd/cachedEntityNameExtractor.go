@@ -41,10 +41,11 @@ func (c *EntityNameExtractor) ExtractName(entityId string) string {
 	var result = entityLanguages{}
 	var cached []byte
 
-	c.db.View(func(tx *bolt.Tx) error {
+	err := c.db.View(func(tx *bolt.Tx) error {
 		cached = tx.Bucket(c.bucketName).Get([]byte(entityId))
 		return nil
 	})
+	utils.ErrCheck(err)
 
 	if cached != nil {
 		err := json.Unmarshal(cached, &result)
