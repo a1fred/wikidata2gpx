@@ -8,7 +8,6 @@ import (
 	"log"
 	"os"
 	"os/signal"
-	"path"
 	"strings"
 	"sync"
 	"time"
@@ -29,11 +28,8 @@ var cacheFilePath string
 var gpxMetadataName string
 
 func init() {
-	dirname, err := os.UserHomeDir()
-	utils.ErrCheck(err)
-
 	WikidataCmd.Flags().StringVarP(&fout, "output", "o", "result.gpx", "result .gpx file")
-	WikidataCmd.Flags().StringVarP(&cacheFilePath, "cache", "", path.Join(dirname, ".wikidata2gpx_cache.bolt"), "Cache file path, used for cache wikidata and nominatim api responses.")
+	WikidataCmd.Flags().StringVarP(&cacheFilePath, "cache", "", ".wikidata2gpx_cache.bolt", "Cache file path, used for cache wikidata and nominatim api responses.")
 	WikidataCmd.Flags().StringVarP(&lang, "lang", "l", "en", "Poi language")
 	WikidataCmd.Flags().StringVarP(&gpxMetadataName, "gpx-metadata-name", "", "wikidata2gpx", "Gpx metadata name")
 }

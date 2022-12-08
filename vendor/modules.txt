@@ -1,42 +1,50 @@
 # github.com/VividCortex/ewma v1.1.1
+## explicit
 github.com/VividCortex/ewma
 # github.com/cheggaaa/pb/v3 v3.0.8
-## explicit
+## explicit; go 1.12
 github.com/cheggaaa/pb/v3
 github.com/cheggaaa/pb/v3/termutil
 # github.com/d4l3k/go-pbzip2 v0.0.0-20181117060939-9d7e0c2f0367
 ## explicit
 github.com/d4l3k/go-pbzip2
 # github.com/fatih/color v1.10.0
+## explicit; go 1.13
 github.com/fatih/color
 # github.com/go-resty/resty/v2 v2.6.0
-## explicit
+## explicit; go 1.11
 github.com/go-resty/resty/v2
 # github.com/inconshreveable/mousetrap v1.0.0
+## explicit
 github.com/inconshreveable/mousetrap
 # github.com/mattn/go-colorable v0.1.8
+## explicit; go 1.13
 github.com/mattn/go-colorable
 # github.com/mattn/go-isatty v0.0.13
-## explicit
+## explicit; go 1.12
 github.com/mattn/go-isatty
 # github.com/mattn/go-runewidth v0.0.13
-## explicit
+## explicit; go 1.9
 github.com/mattn/go-runewidth
 # github.com/pkg/errors v0.8.1
+## explicit
 github.com/pkg/errors
 # github.com/rivo/uniseg v0.2.0
+## explicit; go 1.12
 github.com/rivo/uniseg
 # github.com/spf13/cobra v1.2.1
-## explicit
+## explicit; go 1.14
 github.com/spf13/cobra
 # github.com/spf13/pflag v1.0.5
+## explicit; go 1.12
 github.com/spf13/pflag
 # go.etcd.io/bbolt v1.3.6
-## explicit
+## explicit; go 1.12
 go.etcd.io/bbolt
 # golang.org/x/net v0.0.0-20210405180319-a5a99cb37ef4
+## explicit; go 1.11
 golang.org/x/net/publicsuffix
 # golang.org/x/sys v0.0.0-20210806184541-e5e7981a1069
-## explicit
+## explicit; go 1.17
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix

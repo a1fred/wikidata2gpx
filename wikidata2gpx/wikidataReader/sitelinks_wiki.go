@@ -17,6 +17,7 @@ func getSitelinkTitle(e *Entity, findName string) string {
 }
 
 func GetSitelinkWikiUrl(e *Entity, lang string) string {
+	// TODO: add all or rewrite
 	switch lang {
 	case "ru":
 		title := getSitelinkTitle(e, "ruwiki")

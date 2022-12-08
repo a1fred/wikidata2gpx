@@ -2,7 +2,6 @@ package wikidataReader
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"log"
 
@@ -22,7 +21,7 @@ func StreamEntitiesChan(dumpFileReader io.Reader, out chan *Entity) {
 		var e Entity
 		err := jsonDecoder.Decode(&e)
 		if err != nil {
-			log.Fatal(fmt.Sprintf("%s at offset %d", err, jsonDecoder.InputOffset()))
+			log.Fatalf("%s at offset %d", err, jsonDecoder.InputOffset())
 		}
 
 		out <- &e

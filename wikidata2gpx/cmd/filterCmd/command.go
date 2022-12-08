@@ -6,7 +6,6 @@ import (
 	"log"
 	"os"
 	"os/signal"
-	"path"
 	"strings"
 	"sync"
 	"time"
@@ -25,11 +24,8 @@ var countryCode string // https://en.wikipedia.org/wiki/ISO_3166-1
 var gpxMetadataName string
 
 func init() {
-	dirname, err := os.UserHomeDir()
-	utils.ErrCheck(err)
-
 	FilterCmd.Flags().StringVarP(&fout, "output", "o", "result.gpx", "result .gpx file")
-	FilterCmd.Flags().StringVarP(&cacheFilePath, "cache", "", path.Join(dirname, ".wikidata2gpx_cache.bolt"), "Cache file path, used for cache wikidata and nominatim api responses.")
+	FilterCmd.Flags().StringVarP(&cacheFilePath, "cache", "", ".wikidata2gpx_cache.bolt", "Cache file path, used for cache wikidata and nominatim api responses.")
 	FilterCmd.Flags().StringVarP(&countryCode, "country-code", "", "", "Generate only for country code (ISO_3166-1), all countries if empty (default)")
 	FilterCmd.Flags().StringVarP(&gpxMetadataName, "gpx-metadata-name", "", "wikidata2gpx", "Gpx metadata name")
 }

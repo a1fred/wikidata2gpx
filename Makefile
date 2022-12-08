@@ -6,7 +6,11 @@ BUILD_DIR=build
 BIN=wikidata2gpx
 TARGET=$(BUILD_DIR)/$(BIN)
 
-all: $(TARGET)
+all: CLI.md $(TARGET)
+
+.PHONY: qa
+qa:
+	golangci-lint run
 
 .PHONY: test
 test:
@@ -16,8 +20,6 @@ test:
 $(TARGET): test
 	mkdir -p $(BUILD_DIR)
 	CGO_ENABLED=0 go build -tags=NOCOMPLETION -ldflags "-X main.revision=$(REV) -s -w" -o $(TARGET) ./
-	strip $(TARGET)
-
 	mkdir -p completions
 	go run main.go completion bash > completions/completion.bash
 	go run main.go completion fish > completions/completion.fish
@@ -27,6 +29,29 @@ $(TARGET): test
 .PHONY: clean
 clean:
 	rm -rf $(BUILD_DIR)
+
+.PHONY: CLI.md
+CLI.md:
+	rm -rf CLI.md
+	echo "# wikidata2gpx cli" >> CLI.md
+
+	echo "## Commands" >> CLI.md
+	echo "\`\`\`sh" >> CLI.md
+	echo "$$ ./bin/wikidata2gpx --help" >> CLI.md
+	go run main.go --help >> CLI.md
+	echo "\`\`\`" >> CLI.md
+
+	echo "## wikidata" >> CLI.md
+	echo "\`\`\`sh" >> CLI.md
+	echo "$$ ./bin/wikidata2gpx wikidata --help" >> CLI.md
+	go run main.go wikidata --help >> CLI.md
+	echo "\`\`\`" >> CLI.md
+
+	echo "## filter" >> CLI.md
+	echo "\`\`\`sh" >> CLI.md
+	echo "$$ ./bin/wikidata2gpx filter --help" >> CLI.md
+	go run main.go filter --help >> CLI.md
+	echo "\`\`\`" >> CLI.md
 
 latest-all.json.bz2:
 	wget -c https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2
